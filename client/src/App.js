@@ -28,7 +28,7 @@ state = {
 
 handleSearch = (data) =>{
   this.setState({
-      search: data
+      search: data +":"
   })
     this.callBackendAPI(data)
     .then(res => this.setState({ result: res.express }))
@@ -47,7 +47,7 @@ handleSearch = (data) =>{
         <SearchBar searchFill = {this.handleSearch}/>
         
         <h2>Enter An Author and I'll Tell You The Name <p></p>
-        {this.state.search} : {this.state.result}</h2>
+        {this.state.search} {this.state.result}</h2>
 
       </div>
     );
